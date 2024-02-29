@@ -16,7 +16,7 @@ public class QueryProcessorTest {
   }
 
   @Test
-  public void knowsAboutShakespeare() throws Exception {
+  public void plusMethod() throws Exception {
     // print queryProcess.process
     System.out.println(queryProcessor.process("What is 23 plus 33?"));
     assertThat(queryProcessor.process("What is 23 plus 33?"), containsString("56"));
@@ -24,8 +24,14 @@ public class QueryProcessorTest {
   }
 
   @Test
-  public void knowsAboutDarwin() throws Exception {
+  public void largestMethod() throws Exception {
     assertThat(queryProcessor.process("Which of the following numbers is the largest: 42, 50, 77?"), containsString("77"));
+  }
+  @Test
+  public void multiplyMethod() throws Exception {
+    // print queryProcess.process
+    System.out.println(queryProcessor.process("What is 23 multiplied by 33?"));
+    assertThat(queryProcessor.process("What is 23 multiplied by 33?"), containsString("759"));
   }
 
 }

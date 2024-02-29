@@ -29,7 +29,7 @@ public class QueryProcessor {
     else if (query.toLowerCase().startsWith("what is") && query.toLowerCase().contains("multiplied")) {
           String[] words = query.split(" ");
 
-          return Integer.toString(Integer.parseInt(words[2]) * Integer.parseInt(words[4].replace("?", "")));
+          return Integer.toString(Integer.parseInt(words[2]) * Integer.parseInt(words[5].replace("?", "")));
       }
 
     return "";
