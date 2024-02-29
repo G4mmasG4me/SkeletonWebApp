@@ -14,7 +14,7 @@ public class QueryProcessor {
     else if (query.toLowerCase().contains("darwin")) {
       return "Charles Robert Darwin, FRS FRGS FLS FZS was an English naturalist, "
           + "geologist and biologist, best known for his contributions to the science "
-          + "of evolution.";
+          + "of evolution!";
     }
     return "";
   }
