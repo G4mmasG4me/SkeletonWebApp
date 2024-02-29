@@ -47,10 +47,12 @@ public class QueryProcessor {
 
         for (String number : numbers) {
             // print number
-            System.out.println(number);
             int num = Integer.parseInt(number);
-            if (abs(Math.sqrt(num) - Math.cbrt(num)) < 0.0001) {
-                return Integer.toString(num);
+            // print sqrt and cbrt
+            // print num
+            // if sqrt and cube root are whole numbers
+            if (Math.sqrt(num) % 1 == 0 && Math.cbrt(num) % 1 == 0) {
+                return number;
             }
         }
       }
