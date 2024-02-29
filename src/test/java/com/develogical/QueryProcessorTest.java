@@ -44,7 +44,7 @@ public class QueryProcessorTest {
   public void primeNumberMethod() throws Exception {
     // print
     System.out.println(queryProcessor.process("Which of the following numbers are primes: 2, 79, 34, 66, 83?"));
-    assertThat(queryProcessor.process("Which of the following numbers are primes: 2, 79, 34, 66, 83?"), containsString("73"));
+    assertThat(queryProcessor.process("Which of the following numbers are primes: 2, 79, 34, 66, 83?"), containsString("2, 79, 83"));
   }
 
   @Test
