@@ -6,19 +6,26 @@ public class QueryProcessor {
 
     System.out.println("Received query:" + query);
 
-    if (query.toLowerCase().contains("shakespeare")) {
-      return "William Shakespeare (26 April 1564 - 23 April 1616) was an "
-          + "English poet, playwright, and actor, widely regarded as the greatest "
-          + "writer in the English language and the world's pre-eminent dramatist.";
+    // if first word of query equals "what"
+    if (query.toLowerCase().startsWith("what is")) {
+        // return 2nd word in query + 4th word in query
+        String[] words = query.split(" ");
+        return words[2] + words[4];
     }
-    else if (query.toLowerCase().contains("darwin")) {
-      return "Charles Robert Darwin, FRS FRGS FLS FZS was an English naturalist, "
-          + "geologist and biologist, best known for his contributions to the science "
-          + "of evolution!";
+    else if (query.toLowerCase().startsWith("which of the following numbers is the largest")) {
+        String[] words = query.split(" ");
+        String num1 = words[8].replace(",", "");
+        String num2 = words[9].replace(",", "");
+        String num3 = words[10].replace("?", "");
+        // convert to intergers
+        int n1 = Integer.parseInt(num1);
+        int n2 = Integer.parseInt(num2);
+        int n3 = Integer.parseInt(num3);
+        // find the largest number
+        int max = Math.max(n1, Math.max(n2, n3));
+        return Integer.toString(max);
     }
-    else if (query.toLowerCase().contains("what is your name?")) {
-        return "My name is Develogical!";
-    }
+
     return "";
   }
 }
