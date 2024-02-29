@@ -10,7 +10,8 @@ public class QueryProcessor {
     if (query.toLowerCase().startsWith("what is")) {
         // return 2nd word in query + 4th word in query
         String[] words = query.split(" ");
-        return words[2] + words[4];
+
+        return Integer.toString(Integer.parseInt(words[2]) + Integer.parseInt(words[4].replace("?", "")));
     }
     else if (query.toLowerCase().startsWith("which of the following numbers is the largest")) {
         String[] words = query.split(" ");

@@ -17,12 +17,15 @@ public class QueryProcessorTest {
 
   @Test
   public void knowsAboutShakespeare() throws Exception {
-    assertThat(queryProcessor.process("Shakespeare"), containsString("playwright"));
+    // print queryProcess.process
+    System.out.println(queryProcessor.process("What is 23 plus 33?"));
+    assertThat(queryProcessor.process("What is 23 plus 33?"), containsString("56"));
+
   }
 
   @Test
   public void knowsAboutDarwin() throws Exception {
-    assertThat(queryProcessor.process("Darwin"), containsString("evolution"));
+    assertThat(queryProcessor.process("Which of the following numbers is the largest: 42, 50, 77?"), containsString("77"));
   }
 
 }
