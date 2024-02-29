@@ -15,6 +15,12 @@ public class QueryProcessor {
 
         return Integer.toString(Integer.parseInt(words[2]) + Integer.parseInt(words[4].replace("?", "")));
     }
+  else if (query.toLowerCase().startsWith("what is") && query.toLowerCase().contains("minus")) {
+      // return 2nd word in query + 4th word in query
+      String[] words = query.split(" ");
+
+      return Integer.toString(Integer.parseInt(words[2]) - Integer.parseInt(words[4].replace("?", "")));
+  }
     else if (query.toLowerCase().startsWith("which of the following numbers is the largest")) {
         String[] words = query.split(" ");
         String num1 = words[8].replace(",", "");
