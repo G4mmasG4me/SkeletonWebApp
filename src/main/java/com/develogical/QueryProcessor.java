@@ -1,5 +1,7 @@
 package com.develogical;
 
+import java.util.ArrayList;
+
 import static java.lang.Math.abs;
 
 public class QueryProcessor {
@@ -78,13 +80,21 @@ public class QueryProcessor {
 
         String[] numbers = {num1, num2, num3, num4, num5};
 
+        // create array list to store prime numbers
+        ArrayList<Integer> primes = new ArrayList<Integer>();
+
         // calculate the prime number
         for (String number : numbers) {
             int num = Integer.parseInt(number);
             if (isPrime(num)) {
-                return number;
+                // add to array list
+                primes.add(num);
             }
         }
+        // convert primes to string seperate by comma
+        String new_primes = String.join(",", primes.toString());
+        // remove square brackets
+        return new_primes.substring(1, new_primes.length() - 1);
     }
 
     return "";

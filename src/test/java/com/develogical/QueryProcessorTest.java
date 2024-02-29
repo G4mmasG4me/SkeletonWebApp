@@ -43,16 +43,14 @@ public class QueryProcessorTest {
   @Test
   public void primeNumberMethod() throws Exception {
     // print
-    System.out.println(queryProcessor.process("Which of the following numbers are primes: 37, 71, 80, 88, 47?"));
-    assertThat(queryProcessor.process("Which of the following numbers are primes: 37, 71, 80, 88, 47?"), containsString("37"));
+    System.out.println(queryProcessor.process("Which of the following numbers are primes: 2, 79, 34, 66, 83?"));
+    assertThat(queryProcessor.process("Which of the following numbers are primes: 2, 79, 34, 66, 83?"), containsString("73"));
   }
 
   @Test
   public void minusMethod() throws Exception {
     // print
-    System.out.println(queryProcessor.process("What is 23 minus 33?"));
-    assertThat(queryProcessor.process("What is 23 minus 33?"), containsString("-10"));
+    System.out.println(queryProcessor.process("What is 46 minus 3?"));
+    assertThat(queryProcessor.process("What is 46 minus 3?"), containsString("43"));
   }
-
-
 }
