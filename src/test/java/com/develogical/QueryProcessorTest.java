@@ -33,5 +33,12 @@ public class QueryProcessorTest {
     System.out.println(queryProcessor.process("What is 23 multiplied by 33?"));
     assertThat(queryProcessor.process("What is 23 multiplied by 33?"), containsString("759"));
   }
+  @Test
+  public void squareAndCubeMethod() throws Exception {
+    // print
+    System.out.println("test");
+    System.out.println(queryProcessor.process("Which of the following numbers is both a square and a cube: 117, 125, 4096, 1948, 2876, 4473, 441?"));
+    assertThat(queryProcessor.process("Which of the following numbers is both a square and a cube: 117, 125, 4096, 1948, 2876, 4473, 441?"), containsString("64"));
+  }
 
 }
