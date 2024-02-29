@@ -36,7 +36,16 @@ public class QueryProcessorTest {
   @Test
   public void squareAndCubeMethod() throws Exception {
     // print
-    assertThat(queryProcessor.process("Which of the following numbers is both a square and a cube: 117, 125, 4096, 1948, 2876, 4473, 441?"), containsString("4096"));
+    System.out.println(queryProcessor.process("Which of the following numbers is both a square and a cube: 4332, 1225, 4455, 652, 1857, 4096, 64?"));
+    assertThat(queryProcessor.process("Which of the following numbers is both a square and a cube: 4332, 1225, 4455, 652, 1857, 4096, 64?\t"), containsString("4096"));
   }
+
+  @Test
+  public void primeNumberMethod() throws Exception {
+    // print
+    System.out.println(queryProcessor.process("Which of the following numbers are primes: 58, 61, 51, 81, 49?"));
+    assertThat(queryProcessor.process("Which of the following numbers are primes: 58, 61, 51, 81, 49?"), containsString("61"));
+  }
+
 
 }

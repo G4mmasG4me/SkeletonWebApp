@@ -33,7 +33,7 @@ public class QueryProcessor {
 
           return Integer.toString(Integer.parseInt(words[2]) * Integer.parseInt(words[5].replace("?", "")));
       }
-    else if (query.toLowerCase().startsWith("which of")) {
+    else if (query.toLowerCase().startsWith("which of the following numbers is both a square and a cube")) {
         String[] words = query.split(" ");
         String num1 = words[12].replace(",", "");
         String num2 = words[13].replace(",", "");
@@ -56,10 +56,43 @@ public class QueryProcessor {
             }
         }
       }
-    else if (query.toLowerCase().contains("What is your name?")) {
+    else if (query.toLowerCase().contains("what is your name?")) {
         return "Team Dom";
       }
+    else if (query.toLowerCase().contains("which of the following numbers are primes")) {
+        String[] words = query.split(" ");
+        // print words
+
+        String num1 = words[7].replace(",", "");
+        String num2 = words[8].replace(",", "");
+        String num3 = words[9].replace(",", "");
+        String num4 = words[10].replace(",", "");
+        String num5 = words[11].replace("?", "");
+        // print
+
+        String[] numbers = {num1, num2, num3, num4, num5};
+
+        // calculate the prime number
+        for (String number : numbers) {
+            int num = Integer.parseInt(number);
+            if (isPrime(num)) {
+                return number;
+            }
+        }
+    }
 
     return "";
   }
+
+    private boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
