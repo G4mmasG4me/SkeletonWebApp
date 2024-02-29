@@ -7,7 +7,7 @@ public class QueryProcessor {
     System.out.println("Received query:" + query);
 
     // if first word of query equals "what"
-    if (query.toLowerCase().startsWith("what is")) {
+    if (query.toLowerCase().startsWith("what is") && query.toLowerCase().contains("plus")) {
         // return 2nd word in query + 4th word in query
         String[] words = query.split(" ");
 
@@ -26,6 +26,11 @@ public class QueryProcessor {
         int max = Math.max(n1, Math.max(n2, n3));
         return Integer.toString(max);
     }
+    else if (query.toLowerCase().startsWith("what is") && query.toLowerCase().contains("multiplied")) {
+          String[] words = query.split(" ");
+
+          return Integer.toString(Integer.parseInt(words[2]) * Integer.parseInt(words[4].replace("?", "")));
+      }
 
     return "";
   }
