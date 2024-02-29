@@ -16,6 +16,9 @@ public class QueryProcessor {
           + "geologist and biologist, best known for his contributions to the science "
           + "of evolution!";
     }
+    else if (query.toLowerCase().contains("what is your name?")) {
+        return "My name is Develogical!";
+    }
     return "";
   }
 }
